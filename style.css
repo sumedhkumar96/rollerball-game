@@ -59,3 +59,33 @@ canvas {
   width: 100vw;
   height: 100vh;
 }
+
+#loading-text {
+  font-size: 28px;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 20px;
+  display: none;
+  animation: fadeIn 1s ease-in-out;
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+}
+
+.dots::after {
+  content: '';
+  display: inline-block;
+  animation: dots 1.2s steps(3, end) infinite;
+}
+
+@keyframes dots {
+  0%   { content: ''; }
+  33%  { content: '.'; }
+  66%  { content: '..'; }
+  100% { content: '...'; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
