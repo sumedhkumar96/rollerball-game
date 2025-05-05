@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle at center, #1b1f2b 0%, #0e0f13 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#launch-button {
+  font-size: 24px;
+  padding: 20px 50px;
+  background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.4);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#launch-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(45deg);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: rotate(45deg) scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: rotate(45deg) scale(1);
+    opacity: 0.2;
+  }
+  100% {
+    transform: rotate(45deg) scale(0.9);
+    opacity: 0.7;
+  }
+}
+
+#launch-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 114, 255, 0.6);
+}
+
+canvas {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+}
